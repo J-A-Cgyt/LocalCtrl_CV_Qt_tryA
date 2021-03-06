@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="dipsrc">
+      <UniqueIdentifier>{86b91556-a840-47f7-abbe-e1614021aa45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HK_Includes">
+      <UniqueIdentifier>{d6362759-d59e-4369-9c33-4cebf6153c71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="CV_MinWin.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtUic Include="CV_MinWin.ui">
+      <Filter>Resource Files</Filter>
+    </QtUic>
+    <QtMoc Include="CV_MinWin.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClCompile Include="CV_MinWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\Calib_CGYT.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\canny_TrackBar.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\Cgyt_conv.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\CUDA_Try.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\Features2nd.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\IrisDect.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\MathCgyt.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\MultiThread.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\Pre_proc.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\Self_Blur.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="dipsrc\WaveLet2D.cpp">
+      <Filter>dipsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="PaintArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HK_Camera_Drive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dipsrc\Func_Proj_2nd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dipsrc\MathCgyt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\CameraParams.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\MvCameraControl.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\MvErrorDefine.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\MvObsoleteInterfaces.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\MvSdkExport.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\ObsoleteCamParams.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\PixelType.h">
+      <Filter>HK_Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="HK_Camera_Drive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PaintArea.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

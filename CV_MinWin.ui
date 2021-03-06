@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CV_MinWinClass</class>
+ <widget class="QMainWindow" name="CV_MinWinClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1350</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>CV_MinWin</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QToolBox" name="toolBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>800</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>1400</height>
+       </size>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="getPhotoPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>150</width>
+         <height>610</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>图像获取</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="getPhotoLayout">
+        <item>
+         <widget class="QToolButton" name="oneShootTBtn">
+          <property name="text">
+           <string>单张拍摄</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="cameraConnBtn">
+          <property name="text">
+           <string>相机连接</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="openPhotoTBtn">
+          <property name="text">
+           <string>打开图像</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="videoTBtn">
+          <property name="text">
+           <string>录制视频</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="oneFrameTBtn">
+          <property name="text">
+           <string>截取图像</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="preProcPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>150</width>
+         <height>610</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>预处理</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="preProcLayout">
+        <item>
+         <widget class="QGroupBox" name="blurGrp">
+          <property name="title">
+           <string>模糊组</string>
+          </property>
+          <layout class="QVBoxLayout" name="blurGrpLayout">
+           <item>
+            <widget class="QToolButton" name="gaussTBtn">
+             <property name="text">
+              <string>高斯</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="middleTBtn">
+             <property name="text">
+              <string>中值</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="meanTBtn">
+             <property name="text">
+              <string>均值</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="nlmTBtn">
+             <property name="text">
+              <string>NLM</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="sharperGrp">
+          <property name="title">
+           <string>锐化组</string>
+          </property>
+          <layout class="QVBoxLayout" name="sharperGrpLayout">
+           <item>
+            <widget class="QToolButton" name="laplaceTBtn">
+             <property name="text">
+              <string>Laplace</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="sobelTBtn">
+             <property name="minimumSize">
+              <size>
+               <width>88</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>SOBEL</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_3">
+             <property name="minimumSize">
+              <size>
+               <width>88</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="thresholdGrp">
+          <property name="title">
+           <string>阈值组</string>
+          </property>
+          <layout class="QVBoxLayout" name="thresholdGrpLayout">
+           <item>
+            <widget class="QToolButton" name="simpleThursTBtn">
+             <property name="minimumSize">
+              <size>
+               <width>73</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>简单</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="otsuTBtn">
+             <property name="minimumSize">
+              <size>
+               <width>73</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>OTSU</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_6">
+             <property name="minimumSize">
+              <size>
+               <width>73</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="dectPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>150</width>
+         <height>610</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>识别</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="dectLayout">
+        <item>
+         <widget class="QToolButton" name="houghLineTBtn">
+          <property name="text">
+           <string>霍夫直线</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="houghCircleTBtn">
+          <property name="text">
+           <string>霍夫圆</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="cannyTBtn">
+          <property name="text">
+           <string>canny</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="fastTBtn">
+          <property name="baseSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>FAST</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="contourFindTBtn">
+          <property name="text">
+           <string>边缘提取</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="calcPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>150</width>
+         <height>610</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>参数计算</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="calcLayout">
+        <item>
+         <widget class="QToolButton" name="areaCalcTBtn">
+          <property name="text">
+           <string>面积计算</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="centerCalC">
+          <property name="text">
+           <string>质心计算</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="actualCordCalc">
+          <property name="text">
+           <string extracomment="利用亚像素实现的对提取的边缘进行进一步确认并计算以毫米为单位的实际坐标序列">实际坐标</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="relativePos">
+          <property name="text">
+           <string>相对位置</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="preSetPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>150</width>
+         <height>610</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>程序预设</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="preSetLayout">
+        <item>
+         <widget class="QToolButton" name="presetTBtn1">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>铝合金
+铸件</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="presetTBtn2">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>瞳孔
+位置</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="presetTBtn3">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>70</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>法兰
+零件</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="PaintArea" name="picBox" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>900</width>
+         <height>600</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>CrossCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="minimumSize">
+        <size>
+         <width>900</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="getPhotoStk">
+        <widget class="QLabel" name="fpsLabel">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>100</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>帧率设定：</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>20</y>
+           <width>90</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>90</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="currentText">
+          <string>10</string>
+         </property>
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>25</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>30</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="preProcStk">
+        <widget class="QLabel" name="ksizeLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>20</y>
+           <width>135</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>135</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>模板边长选择：</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="ksizeSpin">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>20</y>
+           <width>65</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>65</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>300</number>
+         </property>
+         <property name="singleStep">
+          <number>2</number>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="simpleThursSpin">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>60</y>
+           <width>65</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>65</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+        </widget>
+        <widget class="QLabel" name="simpleThursLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>60</y>
+           <width>135</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>135</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>简单阈值设定：</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="dectStk">
+        <widget class="QLabel" name="stackLabel3">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>30</y>
+           <width>72</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>识别</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="calcStk">
+        <widget class="QLabel" name="stackLabel4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>91</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>参数计算</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="preSetStk">
+        <widget class="QLabel" name="stackLabel5">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>10</y>
+           <width>91</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>程序预设</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="infoRightLayout">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="shootGrp">
+        <property name="minimumSize">
+         <size>
+          <width>290</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>拍摄控制参数</string>
+        </property>
+        <layout class="QGridLayout" name="shootLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="resolutionLabel">
+           <property name="text">
+            <string>尺寸：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="resolutionCombo">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="shutterLabel">
+           <property name="text">
+            <string>快门：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="shutterCombo">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="ISOLabel">
+           <property name="text">
+            <string>增益：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="ISOcombo">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QRadioButton" name="colorRadio">
+           <property name="text">
+            <string>彩色</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QRadioButton" name="grayRadio">
+           <property name="text">
+            <string>黑白</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="cameraInfoGrp">
+        <property name="minimumSize">
+         <size>
+          <width>290</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>相机参数</string>
+        </property>
+        <layout class="QGridLayout" name="cameraInfoLayout" columnminimumwidth="0,150">
+         <item row="0" column="0">
+          <widget class="QLabel" name="cameraLabel1">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>相机型号：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="cameraLabel2">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>MV-CE120-10GC</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="sensorLabel1">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>传感器型号：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="sensorLabel2">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>SONY IMX226</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="resMLabel1">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>最大分辨率：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="resMLabel2">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>4024 * 3036</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="frameSizeLabel1">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>靶面尺寸：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="frameSizeLabel2">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>7.4*5.6mm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="lensInfoGrp">
+        <property name="minimumSize">
+         <size>
+          <width>290</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>镜头参数</string>
+        </property>
+        <layout class="QGridLayout" name="lensInfoLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="aptureLabel1">
+           <property name="text">
+            <string>最大光圈：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="aptureLabel2">
+           <property name="text">
+            <string>f/1.4</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="focalLengthLabel1">
+           <property name="text">
+            <string>焦距：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="focalLengthLabel2">
+           <property name="text">
+            <string>35mm</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="workDistanceLabel1">
+           <property name="text">
+            <string>工作距离：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="workDistanceLabel2">
+           <property name="text">
+            <string>25mm~∞</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="viewRadiusLabel1">
+           <property name="text">
+            <string>像场直径：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="viewRadiusLabel2">
+           <property name="text">
+            <string>11mm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="missionInfoEdit">
+        <property name="minimumSize">
+         <size>
+          <width>290</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;任务详细信息：&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1350</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="fileMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="optionMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>选项</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="programMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>编程</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="toolMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>工具</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="sensorMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>相机</string>
+    </property>
+    <addaction name="connCameraAct"/>
+   </widget>
+   <widget class="QMenu" name="aboutMenu">
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>关于</string>
+    </property>
+   </widget>
+   <addaction name="fileMenu"/>
+   <addaction name="optionMenu"/>
+   <addaction name="programMenu"/>
+   <addaction name="toolMenu"/>
+   <addaction name="sensorMenu"/>
+   <addaction name="aboutMenu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="undoAct"/>
+   <addaction name="redoAct"/>
+   <addaction name="separator"/>
+   <addaction name="getROIAct"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="connCameraAct">
+   <property name="text">
+    <string>连接相机</string>
+   </property>
+  </action>
+  <action name="undoAct">
+   <property name="text">
+    <string>撤销</string>
+   </property>
+   <property name="toolTip">
+    <string>撤销刚才的动作</string>
+   </property>
+  </action>
+  <action name="redoAct">
+   <property name="text">
+    <string>重做</string>
+   </property>
+   <property name="toolTip">
+    <string>重做被撤销的最后一个动作</string>
+   </property>
+  </action>
+  <action name="getROIAct">
+   <property name="text">
+    <string>获取ROI</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PaintArea</class>
+   <extends>QWidget</extends>
+   <header>PaintArea.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="CV_MinWin.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>openPhotoTBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>CV_MinWinClass</receiver>
+   <slot>openPic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>693</x>
+     <y>-9</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>gaussTBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>CV_MinWinClass</receiver>
+   <slot>gaussBlur()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>269</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>-25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>undoAct</sender>
+   <signal>triggered()</signal>
+   <receiver>CV_MinWinClass</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>674</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolBox</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>618</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>469</x>
+     <y>802</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>openPic()</slot>
+  <slot>gaussBlur()</slot>
+  <slot>undo()</slot>
+ </slots>
+</ui>

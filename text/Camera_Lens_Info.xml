@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<camera id="HK01">
+	<cameraModel>MV-CE120-10GC</cameraModel>
+	<sensor>SONY IMX226</sensor>
+	<maxres>4024 * 3036</maxres>
+	<sensorSize>7.4*5.6mm</sensorSize>
+	<imgSize>
+		<size id="0"></size>
+	</imgSize>
+	<shutterSpeed>
+		<SP id="0"></SP>
+	</shutterSpeed>
+	<Gain>
+		<ISO id="0"></ISO>
+	</Gain>
+</camera>
+<lens id="HK1628">
+	<maxAperture>f/2.8</maxAperture>
+	<focalLength>16mm</focalLength>
+	<workDistance>25mm~∞</workDistance>
+	<fieldPhi>11mm</fieldPhi>
+</lens>
