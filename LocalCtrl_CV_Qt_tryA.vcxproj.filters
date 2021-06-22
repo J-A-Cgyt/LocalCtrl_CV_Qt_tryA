@@ -115,12 +115,12 @@
     <ClInclude Include="Includes\PixelType.h">
       <Filter>HK_Includes</Filter>
     </ClInclude>
-    <ClInclude Include="HK_Camera_Drive.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="PaintArea.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="HK_Camera_Drive.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

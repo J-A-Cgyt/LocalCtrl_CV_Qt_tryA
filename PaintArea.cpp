@@ -20,10 +20,11 @@ PaintArea::PaintArea(QWidget *parent) :QWidget(parent) { //构造函数需要对内部的p
 	color = Qt::red;  //构造函数中设定为红色
 }
 
-void PaintArea::setPic(const QPixmap &dispImg) {
+void PaintArea::setPic(const QPixmap &dispImg) {   //设置完图片以后也得直接刷新一下
 	*pic = dispImg;
 	backup = new QPixmap(pic->size());
 	*backup = pic->copy();
+	update();
 }
 
 void PaintArea::mousePressEvent(QMouseEvent *e) {

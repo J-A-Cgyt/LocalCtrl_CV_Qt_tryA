@@ -116,7 +116,7 @@
   <ItemGroup>
     <ClInclude Include="dipsrc\Func_Proj_2nd.h" />
     <ClInclude Include="dipsrc\MathCgyt.h" />
-    <ClInclude Include="HK_Camera_Drive.h" />
+    <QtMoc Include="HK_Camera_Drive.h" />
     <ClInclude Include="Includes\CameraParams.h" />
     <ClInclude Include="Includes\MvCameraControl.h" />
     <ClInclude Include="Includes\MvErrorDefine.h" />

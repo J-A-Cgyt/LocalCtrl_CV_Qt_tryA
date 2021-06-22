@@ -52,6 +52,7 @@ Mat AnisotropicMT_Cgyt(Mat Src, double K, double Lamda, int Iter) //Ð§¹û´æÒÉ ËÆº
 	temp.convertTo(temp, CV_8UC1);
 	return temp;
 }
+
 //¶àÏß³ÌµÄºËº¯Êý
 void Scan_MT(Mat Src, Mat Res, int Start, int End, 
 	unsigned char Iter2,
