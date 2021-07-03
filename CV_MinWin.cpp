@@ -265,6 +265,10 @@ void CV_MinWin::endView() {
 		sprintf(strTemp, "Destroy Handle fail! nRet [0x%x]\n", nRet);
 		ui.missionInfoEdit->setText(QString::fromLocal8Bit(strTemp));
 	}
+	else {
+		sprintf(strTemp, "Disconnect Camera Successfully!");
+		ui.missionInfoEdit->setText(QString::fromLocal8Bit(strTemp));
+	}
 
 	//断开连接后清理线程和主UI的控制参数
 	handle = nullptr;
